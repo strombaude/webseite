@@ -3,19 +3,19 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://www.example.com/index.html</loc>
+        <loc>https://strom-bau.de/index.html</loc>
         <changefreq>weekly</changefreq>
     </url>
 
     <!-- Kontakt page -->
     <url>
-        <loc>https://www.example.com/kontakt.html</loc>
+        <loc>https://strom-bau.de/kontakt.html</loc>
         <changefreq>weekly</changefreq>
     </url>
 
     <!-- Leistung page -->
     <url>
-        <loc>https://www.example.com/leistung.html</loc>
+        <loc>https://strom-bau.de/leistung.html</loc>
         <changefreq>weekly</changefreq>
     </url>
 
