@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+:root {
+  --textgray: #454545;
+  --vovablue: #1B3F90;
+}
+
+html, body {
+  width: 100%;
+  height:100%;
+  overflow-x: hidden;
+}
+
+body {
+  /*background-image: url("/img/bgg.png");
+  background-repeat: repeat;
+  background-size: 10%;*/
+}
+
+* {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.hiddenlink, .nav-link {
+  text-decoration: none !important;
+  transition: 0.2s;
+  color: var(--textgray);
+}
+
+.nav-link {
+  text-align: center;
+}
+
+.hiddenlink:hover, .nav-link:hover {
+  color: var(--vovablue);
+  text-shadow:
+    -0.25px -0.25px 0 var(--vovablue),
+    0.25px -0.25px 0 var(--vovablue),
+    -0.25px 0.25px 0 var(--vovablue),
+    0.25px 0.25px 0 var(--vovablue);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.headersep { 
+  min-width: 400vw;
+  position: relative;
+  left: -100%;
+  margin: 10px;
+}
+
+.navsep {
+  display: none;
+}
+#navbarborder > li:last-child::after {
+  position: absolute;
+  left: -100%;
+  content: " ";
+  display: block;
+  height: 1px;
+  border-bottom: 1px solid;
+  border-color: var(--textgray);
+  min-width: 400vw;
+}
+
+.customrow, .customrowfoot {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.no-transition {
+  -webkit-transition: height 0.01s;
+  -moz-transition: height 0.01s;
+  -ms-transition: height 0.01s;
+  -o-transition: height 0.01s;
+  transition: height 0.01s;
+}
+
+.colimg {
+  border-radius: 5px;
+  width: min(100%, 50vw);
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow-y: hidden;
+}
+
+.coltitle {
+  padding-top: 10px;
+  text-align: center;
+  color: var(--vovablue);
+  margin: auto;
+}
+
+.lefttext {
+  text-align: left !important;
+}
+
+.coltitlegray {
+  padding-top: 10px;
+  text-align: center;
+  color: var(--textgray);
+  margin: auto;
+}
+
+.colimg-wrapper, .colmore-wrapper {
+  width:100%; 
+  display:flex; 
+  align-items:center; 
+  justify-items:center;
+  flex-direction: column;
+}
+.colmore-wrapper {
+  padding-top:10px;
+}
+.colmore-wrapper > * {
+  color: var(--vovablue);
+  text-align: center;
+  margin: auto;
+}
+
+.customrowfoot > .col {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dissapear-on-mobile {
+  display: none;
+}
+
+.dissapear-on-computer {
+  display: block;
+}
+
+.brand-img {
+  width:90%;
+}
+
+@media (min-width: 576px) {
+    #maincont {
+      margin: auto;
+      width: 75%
+    }
+    .navsep {
+      display: block;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    #navbarborder > li:last-child::after {
+      border-bottom: none;
+    }
+  .customrow, .customrowfoot {
+    flex-direction:row;
+  }
+  .customrowfoot > .col {
+    display:block;
+  }
+  .dissapear-on-mobile {
+    display: block;
+  }
+  .dissapear-on-computer {
+    display: none;
+  }
+  .brand-img {
+    width:50%;
+  }
+  .twocolul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+}
+
+.twocolul > li {
+  margin-bottom: 5px;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border: 15px solid transparent;
+  border-top: 15px solid var(--vovablue);
+  font-size: 0;
+  line-height: 0;
+  float: left;
+  transition: 0.3s ease-in-out;
+}
+
+.colmore-wrapper:hover > .arrow-down {
+  transform: translateY(5px);
+}
+
+#footer {
+  background-color: var(--textgray);
+  color: white;
+  box-shadow: -50vw 0px 0px 0px var(--textgray), 
+              50vw 0px 0px 0px var(--textgray);
+  padding: 10px;
+}
+
+.colimg-slide {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*< https://www.the-art-of-web.com/css/fading-slideshow-no-jquery/ >*/
+
+.colimg .colimg-slide:nth-of-type(1) {
+    animation-name: fader;
+    animation-delay: 4s;
+    animation-duration: 1s;
+    z-index: 20;
+  }
+  .colimg .colimg-slide:nth-of-type(2) {
+    z-index: 10;
+  }
+  .colimg .colimg-slide:nth-of-type(n+3) {
+    display: none;
+  }
+
+  @keyframes fader {
+    from { opacity: 1.0; }
+    to   { opacity: 0.0; }
+  }
+
+/*< /https://www.the-art-of-web.com/css/fading-slideshow-no-jquery/ >*/
+
+.roww {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
