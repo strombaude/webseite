@@ -50,7 +50,7 @@ $('#header').prepend(`
           <div class="flex-grow-1">
             <!--spacer-->
           </div>
-          <div class="navbar-collapse no-transition collapse flex-grow-1 justify-content-center" id="collapsingNavbar">
+          <!--<div class="navbar-collapse no-transition collapse flex-grow-1 justify-content-center" id="collapsingNavbar">
             <ul class="navbar-nav mx-auto" id="navbarborder">
               <li class="nav-item">
                 <a class="nav-link" href="/index.html">STARTSEITE</a>
@@ -64,7 +64,7 @@ $('#header').prepend(`
                 <a class="nav-link" href="/kontakt.html">KONTAKT</a>
               </li>
             </ul>
-          </div>
+          </div>-->
           <div class="flex-grow-1 dissapear-on-mobile">
             <!--spacer-->
           </div>
