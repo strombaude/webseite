@@ -76,9 +76,7 @@ $('#maincont').append(`
       <div class="customrowfoot">
         <div class="col">
           <img src="/img/logo-dark.png" style="width: min(100%, 50vw)">
-          Copyright © 2023 All Rights Reserved
-          <br>
-          Strom Bau
+          Copyright © Waldemar Strom 2023. All Rights Reserved
         </div>
         <div class="col-1"></div>
         <div class="col">
