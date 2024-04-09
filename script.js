@@ -1,11 +1,29 @@
 window.addEventListener("DOMContentLoaded", function(e) {
   for(l of document.getElementsByClassName("colimg-anim")) {
     var arr = l.getElementsByTagName("img");
-    for(var i = 0; i < arr.length; i++) {
-      arr[i].addEventListener("animationend", e => {l.appendChild(arr[0])}, false);
-    }
+    setChanger(arr);
   }
 }, false);
+
+var CHANGER_DELAY = 5000;
+function setChanger(arr) {
+  let changeee = (i, len="1") => {
+    arr[(i - 1 + arr.length) % arr.length].style.zIndex = 8;
+    arr[i % arr.length].style.zIndex = 9;
+    arr[i % arr.length].style.transition = `opacity ${len}s linear`;
+    arr[i % arr.length].style.opacity = 1;
+    arr[(i + 1) % arr.length].style.transition = "opacity 0s linear";
+    arr[(i + 1) % arr.length].style.opacity = 0;
+    arr[(i + 1) % arr.length].style.zIndex = 10;
+  }
+  let changeNext = (i) => {
+    changeee(i);
+    setTimeout(changeNext, CHANGER_DELAY, i + 1);
+  };
+  changeee(0, "0.01");
+  changeee(1, "0.01");
+  changeNext(2);
+}
 
 $('#header').prepend(`
       <div class="row">
@@ -34,11 +52,11 @@ $('#header').prepend(`
         </div>
         <hr class="headersep">
         <a class="navbar-brand" href="#" style="width:100%; display:flex; align-items:center; justify-content:center;">
-          <img src="/img/logo.png" class="brand-img">
+          <img src="./img/logo.png" class="brand-img">
         </a>
         <nav class="navbar navbar-expand-sm">
           <!--<a class="navbar-brand" href="#" style="max-width: 40%">
-            <img src="/img/logo.png" class="navbar-brand-img" style="width: 100%">
+            <img src="./img/logo.png" class="navbar-brand-img" style="width: 100%">
           </a>-->
           <div class="flex-grow-1 dissapear-on-computer">
             <!--spacer-->
@@ -50,21 +68,21 @@ $('#header').prepend(`
           <div class="flex-grow-1">
             <!--spacer-->
           </div>
-          <!--<div class="navbar-collapse no-transition collapse flex-grow-1 justify-content-center" id="collapsingNavbar">
+          <div class="navbar-collapse no-transition collapse flex-grow-1 justify-content-center" id="collapsingNavbar">
             <ul class="navbar-nav mx-auto" id="navbarborder">
               <li class="nav-item">
-                <a class="nav-link" href="/index.html">STARTSEITE</a>
+                <a class="nav-link" href="./index.html">STARTSEITE</a>
               </li>
               <div class="vr navsep"></div>
               <li class="nav-item">
-                <a class="nav-link" href="/leistung.html">LEISTUNG</a>
+                <a class="nav-link" href="./leistung.html">LEISTUNG</a>
               </li>
               <div class="vr navsep"></div>
               <li class="nav-item">
-                <a class="nav-link" href="/kontakt.html">KONTAKT</a>
+                <a class="nav-link" href="./kontakt.html">KONTAKT</a>
               </li>
             </ul>
-          </div>-->
+          </div>
           <div class="flex-grow-1 dissapear-on-mobile">
             <!--spacer-->
           </div>
@@ -75,12 +93,12 @@ $('#maincont').append(`
     <div id="footer">
       <div class="customrowfoot">
         <div class="col">
-          <img src="/img/logo-dark.png" style="width: min(100%, 50vw)">
+          <img src="./img/logo-dark.png" style="width: min(100%, 50vw)">
           Copyright © Waldemar Strom 2023. All Rights Reserved
         </div>
         <div class="col-1"></div>
         <div class="col">
-          <h3 style="margin-top: 10px;">КОНТАКТЬІ</h3>
+          <h3 style="margin-top: 10px;">KONTAKTE</h3>
           <div>
             <a href="tel:+491605647272" style="text-decoration:none;">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -112,7 +130,7 @@ $('#maincont').append(`
         <div class="col-1"></div>
         <div class="col">
           <h3 style="margin-top: 10px;">QUICK LINKS</h3>
-          <a href="/datenschutz-impressum.html">Datenschutz / Impressum</a>
+          <a href="./datenschutz-impressum.html">Datenschutz / Impressum</a>
         </div>
       </div>
     </div>
